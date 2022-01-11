@@ -3,7 +3,6 @@ from pyrogram import Client, filters
 from pyrogram.types import Message, Audio, Voice
 from Music import app
 from Music.MusicUtilities.helpers.decorators import errors
-from Music.MusicUtilities.helpers.decorate import authorized_users_only
 from Music.MusicUtilities.helpers.filters import command, other_filters
 from Music.MusicUtilities.database.queue import (is_active_chat, add_active_chat, remove_active_chat, music_on, is_music_playing, music_off)
 from pyrogram.types import (
@@ -172,24 +171,24 @@ async def stop_cmd(_, message):
                         if flex[str(bytesx)] == 1:
                             flex[str(bytesx)] += 1
                             sedtime.sleep(1)
-                            mystic.edit(f"Downloading {title[:50]}\n\n**File Size:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
+                            mystic.edit(f"Downloading {title[:50]}\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
                         if per > 500:    
                             if flex[str(bytesx)] == 2:
                                 flex[str(bytesx)] += 1
                                 sedtime.sleep(0.5)
-                                mystic.edit(f"Downloading {title[:50]}...\n\n**File Size:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
+                                mystic.edit(f"Downloading {title[:50]}...\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
                                 print(f"[{videoid}] Downloaded {percentage} at a speed of {speed} in {chat_title} | ETA: {eta} seconds")
                         if per > 800:    
                             if flex[str(bytesx)] == 3:
                                 flex[str(bytesx)] += 1
                                 sedtime.sleep(0.5)
-                                mystic.edit(f"Downloading {title[:50]}....\n\n**File Size:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
+                                mystic.edit(f"Downloading {title[:50]}....\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
                                 print(f"[{videoid}] Downloaded {percentage} at a speed of {speed} in {chat_title} | ETA: {eta} seconds")
                         if per == 1000:    
                             if flex[str(bytesx)] == 4:
                                 flex[str(bytesx)] = 1
                                 sedtime.sleep(0.5)
-                                mystic.edit(f"Downloading {title[:50]}.....\n\n**File Size:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec") 
+                                mystic.edit(f"Downloading {title[:50]}.....\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec") 
                                 print(f"[{videoid}] Downloaded {percentage} at a speed of {speed} in {chat_title} | ETA: {eta} seconds")
                 loop = asyncio.get_event_loop()
                 xxx = await loop.run_in_executor(None, download, url, my_hook)
@@ -218,7 +217,7 @@ async def stop_cmd(_, message):
                 await message.reply_photo(
                 photo= thumb,
                 reply_markup=InlineKeyboardMarkup(buttons),    
-                caption=(f"<b>__Skipped Voice Chat__</b>\n\n🎥 <b>__Started Playing:__ </b>[{title[:25]}]({url}) \n⏳ <b>__Duration:__</b> {duration} Mins\n👤 **__Requested by:__** {semx.mention}")
+                caption=(f"<b>__Skipped Voice Chat__</b>\n\n🎥<b>__Started Playing:__ </b>[{title[:25]}]({url}) \n⏳<b>__Duration:__</b> {duration} Mins\n👤**__Requested by:__** {semx.mention}")
             )   
                 os.remove(thumb)
             else:      
@@ -248,6 +247,6 @@ async def stop_cmd(_, message):
                 await message.reply_photo(
                 photo=f"downloads/{_chat_}final.png",
                 reply_markup=InlineKeyboardMarkup(buttons),
-                caption=f"<b>__Skipped Voice Chat__</b>\n\n🎥 <b>__Started Playing:__</b> {title} \n⏳ <b>__Duration:__</b> {duration} \n👤 <b>__Requested by:__ </b> {username}",
+                caption=f"<b>__Skipped Voice Chat__</b>\n\n🎥<b>__Started Playing:__</b> {title} \n⏳<b>__Duration:__</b> {duration} \n👤<b>__Requested by:__ </b> {username}",
                 )
                 return

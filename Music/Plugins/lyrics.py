@@ -20,7 +20,7 @@ async def lyricssex(_,CallbackQuery):
     try:
         id, user_id = callback_request.split("|") 
     except Exception as e:
-        return await CallbackQuery.message.edit(f"❌ Error Occured\n✅ **Possible reason could be**:{e}")
+        return await CallbackQuery.message.edit(f"Error Occured\n**Possible reason could be**:{e}")
     url = (f"https://www.youtube.com/watch?v={id}")
     print(url)
     try:
@@ -28,7 +28,7 @@ async def lyricssex(_,CallbackQuery):
         for result in results.result()["result"]:
             title = (result["title"])
     except Exception as e:
-        return await CallbackQuery.answer("❌ Sound not found, Youtube issues...", show_alert=True)   
+        return await CallbackQuery.answer("Sound not found. Youtube issues.", show_alert=True)   
     x = "OXaVabSRKQLqwpiYOn-E4Y7k3wj-TNdL5RfDPXlnXhCErbcqVvdCF-WnMR5TBctI"
     y = lyricsgenius.Genius(x)
     print(title)
@@ -37,12 +37,12 @@ async def lyricssex(_,CallbackQuery):
     y.verbose = False
     S = y.search_song(t, get_full_info=False)
     if S is None:
-        return await CallbackQuery.answer("❌ Lyrics not found :p", show_alert=True)
+        return await CallbackQuery.answer("Lyrics not found :p", show_alert=True)
     await CallbackQuery.message.delete()
     userid = CallbackQuery.from_user.id
     usr = f"[{CallbackQuery.from_user.first_name}](tg://user?id={userid})"
     xxx = f"""
-**Lyrics Search Powered By Yukki Music Player**
+**Lyrics Search Powered By Music Bot**
 
 **Searched By:-** {usr}
 **Searched Song:-** __{title}__
@@ -58,16 +58,16 @@ async def lyricssex(_,CallbackQuery):
     
 @Client.on_message(filters.command("lyrics"))
 async def lrsearch(_, message: Message):  
-    m = await message.reply_text("🔎 Searching Lyrics")
+    m = await message.reply_text("Searching Lyrics")
     query = message.text.split(None, 1)[1]
     x = "OXaVabSRKQLqwpiYOn-E4Y7k3wj-TNdL5RfDPXlnXhCErbcqVvdCF-WnMR5TBctI"
     y = lyricsgenius.Genius(x)
     y.verbose = False
     S = y.search_song(query, get_full_info=False)
     if S is None:
-        return await m.edit("❌ Lyrics not found :p")
+        return await m.edit("Lyrics not found :p")
     xxx = f"""
-**Lyrics Search Powered By Yukki Music Player**
+**Lyrics Search Powered By @DeeCodeBots Music Bot**
 
 **Searched Song:-** __{query}__
 
@@ -78,3 +78,4 @@ async def lrsearch(_, message: Message):
 
 {S.lyrics}"""
     await m.edit(xxx)
+    

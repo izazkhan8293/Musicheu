@@ -7,7 +7,7 @@ import shutil
 import os
    
     
-@Client.on_message(command("rmr") & filters.user(SUDOERS))
+@Client.on_message(command("clean") & filters.user(SUDOERS))
 async def hsjdjs(_, message: Message):    
     dir = 'downloads'
     dir1 = 'search'
