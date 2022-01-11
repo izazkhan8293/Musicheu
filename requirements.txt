@@ -29,9 +29,5 @@ telegraph
 hachoir
 lyricsgenius
 pafy
-
+youtube_dl
 yt_dlp
-Pytgcalls
-Yt_dl
-pyrogram
-Yt_search

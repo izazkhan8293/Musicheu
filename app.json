@@ -1,9 +1,14 @@
 {
-    "name": "Zaid Vc Player",
+    "name": "private Music",
+    "logo": "https://te.legra.ph/file/24add7d3f42fdf0a909c7.jpg",
     "description": "Music allow you to stream music trought the telegram voice chat feature.",
-    "keywords": ["Zaid", "Veez Music", "music", "voice chat", "telegram", "Yukki", "Yukki Music", "Private Music"],
-    "repository": "https://github.com/itsunknown-12/Zaid-Vc-Player",
-  "stack": "container",
+    "keywords": [
+        "music", 
+        "voice chat", 
+        "telegram"
+    ],
+    "repository": "https://github.com/Mohan745/python-music",
+    "stack": "container",
     "env": {
         "SESSION_NAME": {
             "description": "fill with the pyrogram session string from account",
@@ -12,60 +17,56 @@
         "OWNER_ID": {
             "description": "fill with your telegram id as the owner of the bot",
             "required": true,
-            "value": "1669178360"
+            "value": ""
         },
         "ASS_ID": {
             "description": "fill with telegram id of account",
             "required": true,
-            "value": "1904094450"
+            "value": ""
         },
         "LOG_GROUP_ID": {
-            "description": "Add @Zaid2_robot and type /id to get ur chat id",
+            "description": "create a private group and get the group id, add your bot as admin to the group too",
             "required": true,
-            "value": "Fill There Ur Private/Channel Id Make sure start with -100"
+            "value": ""
         },
         "API_ID": {
             "description": "your Api ID from my.telegram.org/apps",
             "required": true,
-            "value": "6435225"
+            "value": ""
         },
         "API_HASH": {
             "description": "your Api Hash from my.telegram.org/apps",
-            "required": false,
-            "value": "4e984ea35f854762dcde906dce426c2d"
-        },
-        "ZAID_SUPPORT": {
-            "description": "Ur Support Group Username",
-            "required": false,
-            "value": "Superior_Support"
-        },
-        "UPDATES_CHANNEL": {
-            "description": "Ur Updates Channel",
-            "required": false,
-            "value": "Superior_bots"
+            "required": true,
+            "value": ""
         },
         "SUDO_USERS": {
             "description": "fill with the user id who can access all function in your bot (separate with space).",
             "required": true,
-            "value": "1669178360"
+            "value": ""
         },
         "DURATION_LIMIT": {
             "description": "filled, don't change this !",
             "required": true,
-            "value": "540000"
+            "value": ""
         },
         "BOT_TOKEN": {
             "description": "fill with your bot token get from @BotFather on telegram",
             "required": true,
             "value": ""
         },
+        "BG_IMAGE": {
+            "description": " BG IMAGE",
+            "required": true,
+            "value": ""
+        },
         "MONGO_DB_URI": {
             "description": "fill with the mongodb url get from mongodb.cloud.com (don't use mine below !)",
             "required": true,
-            "value": "mongodb+srv://music:music@cluster0.sh6h4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+            "value": ""
         }
     },
-  "buildpacks": [
+    "addons": [],
+    "buildpacks": [
         {
             "url": "heroku/python"
         },
@@ -81,6 +82,5 @@
             "quantity": 1,
             "size": "free"
         }
-    },
-    "stack": "container"
+    }
 }
