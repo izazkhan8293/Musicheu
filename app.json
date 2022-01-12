@@ -1,14 +1,9 @@
 {
-    "name": "private Music",
-    "logo": "https://te.legra.ph/file/24add7d3f42fdf0a909c7.jpg",
+    "name": "Zaid Vc Player",
     "description": "Music allow you to stream music trought the telegram voice chat feature.",
-    "keywords": [
-        "music", 
-        "voice chat", 
-        "telegram"
-    ],
-    "repository": "https://github.com/Mohan745/python-music",
-    "stack": "container",
+    "keywords": ["Zaid", "Veez Music", "music", "voice chat", "telegram", "Yukki", "Yukki Music", "Private Music"],
+    "repository": "https://github.com/itsunknown-12/Zaid-Vc-Player",
+  "stack": "container",
     "env": {
         "SESSION_NAME": {
             "description": "fill with the pyrogram session string from account",
@@ -17,56 +12,60 @@
         "OWNER_ID": {
             "description": "fill with your telegram id as the owner of the bot",
             "required": true,
-            "value": ""
+            "value": "1669178360"
         },
         "ASS_ID": {
             "description": "fill with telegram id of account",
             "required": true,
-            "value": ""
+            "value": "1904094450"
         },
         "LOG_GROUP_ID": {
-            "description": "create a private group and get the group id, add your bot as admin to the group too",
+            "description": "Add @Zaid2_robot and type /id to get ur chat id",
             "required": true,
-            "value": ""
+            "value": "Fill There Ur Private/Channel Id Make sure start with -100"
         },
         "API_ID": {
             "description": "your Api ID from my.telegram.org/apps",
             "required": true,
-            "value": ""
+            "value": "6435225"
         },
         "API_HASH": {
             "description": "your Api Hash from my.telegram.org/apps",
-            "required": true,
-            "value": ""
+            "required": false,
+            "value": "4e984ea35f854762dcde906dce426c2d"
+        },
+        "ZAID_SUPPORT": {
+            "description": "Ur Support Group Username",
+            "required": false,
+            "value": "Superior_Support"
+        },
+        "UPDATES_CHANNEL": {
+            "description": "Ur Updates Channel",
+            "required": false,
+            "value": "Superior_bots"
         },
         "SUDO_USERS": {
             "description": "fill with the user id who can access all function in your bot (separate with space).",
             "required": true,
-            "value": ""
+            "value": "1669178360"
         },
         "DURATION_LIMIT": {
             "description": "filled, don't change this !",
             "required": true,
-            "value": ""
+            "value": "540000"
         },
         "BOT_TOKEN": {
             "description": "fill with your bot token get from @BotFather on telegram",
             "required": true,
             "value": ""
         },
-        "BG_IMAGE": {
-            "description": " BG IMAGE",
-            "required": true,
-            "value": ""
-        },
         "MONGO_DB_URI": {
             "description": "fill with the mongodb url get from mongodb.cloud.com (don't use mine below !)",
             "required": true,
-            "value": ""
+            "value": "mongodb+srv://music:music@cluster0.sh6h4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
         }
     },
-    "addons": [],
-    "buildpacks": [
+  "buildpacks": [
         {
             "url": "heroku/python"
         },
@@ -82,5 +81,6 @@
             "quantity": 1,
             "size": "free"
         }
-    }
+    },
+    "stack": "container"
 }
