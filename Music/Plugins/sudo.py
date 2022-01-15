@@ -27,7 +27,7 @@ async def useradd(_, message: Message):
         if added:
             await message.reply_text(f"✅ Added **{user.mention}** as a Super User for Yukki OwO")
             return os.execvp("python3", ["python3", "-m", "Music"])
-        await edit_or_reply(message, text="❌ Something wrong happened, check logs.")  
+        await edit_or_reply(message, text="❌ Something wrong happened, checkslogs.")  
         return
     from_user_id = message.from_user.id
     user_id = message.reply_to_message.from_user.id
