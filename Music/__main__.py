@@ -51,7 +51,7 @@ async def main():
         except Exception as e:
             print("Error came while clearing db")
             pass     
-    await app.send_message(LOG_GROUP_ID, "Bot Started")
+    await app.send_message(LOG_GROUP_ID, "Bot Started  now")
     await client.send_message(LOG_GROUP_ID, "Assistant Started")
     print("[INFO]: STARTED")
     
